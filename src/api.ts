@@ -11,11 +11,15 @@ const isLocalhost =
 // Selecciona la URL base
 export const API_BASE_URL = isLocalhost ? LOCAL_API_BASE_URL : ONLINE_API_BASE_URL;
 
+// Token de acceso (debe coincidir con API_TOKEN en el servidor)
+const API_ACCESS_TOKEN = 'clave...teki_token_12345';
+
 // Crea una instancia de Axios preconfigurada
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
+    'Authorization': `Bearer ${API_ACCESS_TOKEN}`
   },
 });
 
